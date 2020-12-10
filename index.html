@@ -3,6 +3,8 @@
 <head>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
 <style>
 p {
   text-align: center;
@@ -14,11 +16,37 @@ p {
 <body>
   
 <p id="demo"></p>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyD6Fypil9VW2o5ro3mCjK0oOPb5PPcV2Xo",
+    authDomain: "visitcounter-be3d9.firebaseapp.com",
+    databaseURL: "https://visitcounter-be3d9-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "visitcounter-be3d9",
+    storageBucket: "visitcounter-be3d9.appspot.com",
+    messagingSenderId: "1090942718200",
+    appId: "1:1090942718200:web:9127b08a6f4a273ceb2b0d",
+    measurementId: "G-XSQ8GP9QJL"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
 <script>
   
   var countDownDate = new Date("Dec 15, 2020, 18:00:00").getTime();
   
-  firebase.database().ref("counter").push().set("Count")
+  firebase.database().ref("counter").push().set(new Date().toString())
     .then(function(snapshot) {
         console.log("Success");
   }, function(error) {
@@ -41,28 +69,6 @@ var x = setInterval( function() {
   }, 1000);
 </script>
   
-  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyD6Fypil9VW2o5ro3mCjK0oOPb5PPcV2Xo",
-    authDomain: "visitcounter-be3d9.firebaseapp.com",
-    projectId: "visitcounter-be3d9",
-    storageBucket: "visitcounter-be3d9.appspot.com",
-    messagingSenderId: "1090942718200",
-    appId: "1:1090942718200:web:9127b08a6f4a273ceb2b0d",
-    measurementId: "G-XSQ8GP9QJL"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
 
 </body>
 </html>
