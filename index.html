@@ -14,7 +14,7 @@ p {
 </style>
 </head>
 <body>
-  
+
 <p id="demo"></p>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
@@ -43,32 +43,34 @@ p {
 </script>
 
 <script>
-  
-  var countDownDate = new Date("Dec 15, 2020, 18:00:00").getTime();
-  
+
+  var countDownDate = new Date("Dec 15, 2020, 16:19:00").getTime();
+
   firebase.database().ref("counter").push().set(new Date().toString())
     .then(function(snapshot) {
         console.log("Success");
   }, function(error) {
     console.log("Error");
   });
-                               
+
 var x = setInterval( function() {
     var now = new Date().getTime();
     var distance = countDownDate - now
-    
+
     var days = Math.floor(distance / (1000*3600*24));
     var hours = Math.floor((distance % (1000*3600*24)) / (1000*3600));
     var minutes = Math.floor((distance % (1000*3600)) / (1000*60));
     var seconds = Math.floor((distance % (1000*60)) / (1000));
-    
-    document.getElementById("demo").innerHTML = days+"d "+ hours + "h "+ minutes + "m " + seconds + "s ";
-    if (distance < 0) {
-      document.getElementById("demo").innerHTML = "EXPIRED";
+
+    if (distance > 0) {
+      document.getElementById("demo").innerHTML = days+"d "+ hours + "h "+ minutes + "m " + seconds + "s ";
+    } else {
+      window.location.replace("songSite.html");
+      //document.getElementById("demo").innerHTML = "EXPIRED";
     }
   }, 1000);
 </script>
-  
+
 
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Nikolaus time!</title>
+
+        <script src="snow-background.js"></script>
+        <script>
+            window.onload = function() {
+              try {
+                snow.count = 30;   // number of flakes
+                snow.delay = 20;   // timer interval
+                snow.minSpeed = 2; // minimum movement/time slice
+                snow.maxSpeed = 5; // maximum movement/time slice
+                snow.start();
+              } catch(e) {
+                // no snow 🙁
+                console.log("Some snow error");
+              }
+            };
+        </script>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+      <div align="center">
+    <h1 style="color:white;"> Numerically Christmas! </h1>
+    <figure>
+        <figcaption></figcaption>
+        <audio
+            controls
+            src="ChristmasSongv2.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+        </audio>
+    </figure>
+  </div>
+
+
+    </body>
+</html>
