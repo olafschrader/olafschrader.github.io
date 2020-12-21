@@ -65,7 +65,8 @@ var x = setInterval( function() {
     if (distance > 0) {
       document.getElementById("demo").innerHTML = days+"d "+ hours + "h "+ minutes + "m " + seconds + "s ";
     } else {
-      window.location.replace("othersite/songSite.html");
+      document.getElementById("demo").innerHTML = "Dieser Song wurde von BTS gekauft und ist daher aus Copyrightgründen nicht mehr abrufbar.";
+      // window.location.replace("othersite/songSite.html");
       //document.getElementById("demo").innerHTML = "EXPIRED";
     }
   }, 1000);
